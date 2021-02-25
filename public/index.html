@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head> 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+ <!--<script src="js/script.js"></script>-->
+<!-- to try:
+	https://stackoverflow.com/questions/25821389/socket-io-and-node-js-400-bad-request
+	 --> 
+</head>
+<body>
+<h1>Socket test</h1>
+<p>My paragraph.</p>
+<button id="button">Test</button>
+ <!--
+  SCRIPT>JS CAUSES A MIME TYPE ERROR
+ <script>
+ 	var socket;
+    socket = io.connect('http://localhost:3000');
+    var button = document.getElementById('button');
+    button.addEventListener('click',function(){
+	  var data = {
+		'X-Content-Type':'text/html'
+ 	  };
+	  socket.emit('sendMessage',data);
+   });
+ </script>-->
+ <script>
+ 	var socket;
+//const io = require("socket.io-client");
+socket = io.connect('http://localhost:3000',{
+
+	withCredentials:true,
+	transports:['websocket','polling'],
+	extraHeaders: {
+      "my-custom-header": "abcd"
+    }
+});
+var button = document.getElementById('button');
+
+socket.on("hello", (arg) => {
+  console.log(arg); // world
+});
+socket.on('connected',function() {
+	console.log('connected!');
+});
+
+button.addEventListener('click',function(){
+	console.log('click!');
+	var data = {
+		'X-Content-Type':'text/html'
+	};
+
+	socket.emit('sendMessage',data);
+});
+ </script>
+</body>
+</html> 
