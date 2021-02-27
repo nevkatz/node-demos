@@ -3,17 +3,8 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 const fs = require('fs');
 const express = require('express');
-
-
-
 //const xm = require("xmimetype");
-/* 
-// naive implementation
 
-app.get('/',(req,res) => {
-	res.send('<h2>Hello app</h1>');
-});
-*/
 
 // this seems to make the difference.
 app.use(express.static('public'));
@@ -56,6 +47,7 @@ io.on('connection',(socket) =>{
      	console.log('not creating the output directory because it already exists.');
     }
 	socket.on('chat message', (msg) => {
+		// prints to server
 		console.log('message: ' + msg);
 
 		// file write logic
@@ -69,12 +61,17 @@ io.on('connection',(socket) =>{
          // list files
         fs.readdir(__dirname + '/public/output', (err, files) => {
          files.forEach(file => {
-          console.log('filename: ' + file);
+           console.log('filename: ' + file);
+            socket.emit('file-list',{
+            	message:'file: ' + file
+            });
           });
          });
 	})
-})
+});
+// start the listening process
 http.listen(3000, () => {
+  // outputs to command line
   console.log('listening on *:3000');
 });
 
