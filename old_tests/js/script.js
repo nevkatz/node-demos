@@ -11,11 +11,7 @@ socket = io.connect('ws://localhost:3000',{
 });
 var button = document.getElementById('button');
 
-button.addEventListener('click',function(){
-	var data = {
-		'X-Content-Type':'text/html'
-	};
-
+button.addEventListener('click',function() {
 	socket.emit('sendMessage',data);
 });
 

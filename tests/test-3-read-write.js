@@ -1,3 +1,11 @@
+/*
+ *  Test of reading and writing files.
+ *
+ *  Reads from test-files/test-3-read-write.html
+ *
+ *  Writes to output.txt
+ */
+
 var http = require('http');
 var fs = require('fs');
 
@@ -6,7 +14,7 @@ let host = 'http://127.0.0.1';
 
 let server = http.createServer(function(req,res){
 
-	fs.readFile('test1.html',function(err,data){
+	fs.readFile('test-files/test-3-read-write.html',function(err,data){
 
 		res.writeHead(200,
 			{'Content-Type':'text/html'}
@@ -20,12 +28,12 @@ let server = http.createServer(function(req,res){
 
 server.listen(port);
 
-let filename = 'output.txt';
-let content = 'Hello world';
+let filename = 'output/test-3-output.txt';
+let content = 'Hello world!';
 
 fs.writeFile(filename, content, function (err){
 	if (err) { throw err; }
-	console.log('saved!');
+	console.log('file saved!');
 });
 
 console.log('Server running at '+host+':'+port+'/');
