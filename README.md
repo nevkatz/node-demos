@@ -24,10 +24,20 @@ There is an output directory for the simple tests outside the public directory.
 
 The main test should dynamically create an output directory in the public directory if it does not exist.
 
-### Running the tests
+### Running the main test
 
-* To run the tests or fire off the main server program, index.js, use the command line and go to the main repo directory. 
-* stay at the top level of the directory or type "node <file>." 
+* To run the main test, use the command line and go to the main repo directory. 
+
+* Type "node index.js" at the top level.
+
+* Then, open a web browser and go to http://127.0.0.1:3000 or http://localhost:3000 
+
+### Running the other tests
+
+* To run the tests, go to the main repo directory and then go into the "tests" directory. 
+
+* Type "node <file>." 
+
 * Then, open a web browser and go to http://127.0.0.1:3000 or http://localhost:3000 
 
 ### Dependencies
@@ -43,7 +53,6 @@ The favicon came from https://favicon.io/emoji-favicons/dragon-face/
 The primary differences are some MIME type handling for the JS file and additional file-creation tests.
 
 Deleting a file: https://stackoverflow.com/questions/5315138/node-js-remove-file
-
 
 ### Helpful sources
 
