@@ -20,7 +20,11 @@ For the most recent stuff, check out index.js, and public, and the test JS files
 
 ### Output directories
 
-There is an output directory for the simple tests outside the public directory. 
+Files written during the tests show up in the output directories. 
+
+There is an output directory for the main test within the "public" directory.
+
+There is also an "output" directory for simple tests within the "tests" directory.
 
 The main test should dynamically create an output directory in the public directory if it does not exist.
 
