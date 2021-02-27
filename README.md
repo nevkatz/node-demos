@@ -22,8 +22,12 @@ In addition to having Node installed, make sure you have Socket IO and Express i
 
 ### Work Cited
 
-The server-client part of the primary demo is based on the tutorial from https://socket.io/get-started/chat. 
+The server-client part of the primary demo is based on the tutorial from https://socket.io/get-started/chat
+
+The favicon came from https://favicon.io/emoji-favicons/dragon-face/
 
 The primary differences are some MIME type handling for the JS file and additional file-creation tests.
+
+Deleting a file: 
 
 
