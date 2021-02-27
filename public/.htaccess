@@ -1,0 +1,8 @@
+# DEFAULTS
+DefaultLanguage en
+AddLanguage en-US .html .css .js
+AddCharset utf-8 .html .css .js .xml .json .rss .atom
+	
+# JAVASCRIPT
+AddType application/javascript js jsonp
+AddType application/json json
