@@ -15,3 +15,7 @@ My primary aim is to learn enough so that I can use it to build little desktop a
 The primary server file is index.js. The files that are used for the client are in the public directory. I have a directory called old_tests that has a bunch of old files. To be candid, I am not really maintaining that now but maybe you can get a sense of things I've tried. 
 
 For the most recent stuff, check out index.js and public.
+
+### Dependencies
+
+In addition to having Node installed, make sure you have Socket IO and Express installed. 
