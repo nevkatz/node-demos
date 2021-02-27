@@ -19,3 +19,11 @@ For the most recent stuff, check out index.js and public.
 ### Dependencies
 
 In addition to having Node installed, make sure you have Socket IO and Express installed. 
+
+### Work Cited
+
+The server-client part of the primary demo is based on the tutorial from https://socket.io/get-started/chat. 
+
+The primary differences are some MIME type handling for the JS file and additional file-creation tests.
+
+

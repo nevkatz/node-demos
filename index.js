@@ -25,13 +25,13 @@ app.get('/',(req,res) => {
 });
 io.on('connection',(socket) =>{
 	console.log('a user connected... ');
-      let path = 'public/output';
+      let output_path = 'public/output';
 
-      let d_test = 'public/test.txt';
+      let delete_test = 'public/test.txt';
 
       // delete test
-      if (fs.existsSync(d_test)) {
-      	    fs.unlink(d_test,function(err){
+      if (fs.existsSync(delete_test)) {
+      	    fs.unlink(delete_test,function(err){
             if(err) return console.log(err);
             console.log('file deleted successfully');
         });
@@ -41,10 +41,10 @@ io.on('connection',(socket) =>{
       }
    
 
-      // check for a directory
-      if (!fs.existsSync(path)) {
+      // create output directory if it does not exist.
+      if (!fs.existsSync(output_path)) {
       	// if it doesn't exist, create it.
-         fs.mkdir(path, function(err) {
+         fs.mkdir(output_path, function(err) {
             if (err) {
              console.log('ERROR: ' + err)
           } else {
@@ -53,7 +53,7 @@ io.on('connection',(socket) =>{
        });
      }
      else {
-     	console.log('file exists.....');
+     	console.log('not creating the output directory because it already exists.');
     }
 	socket.on('chat message', (msg) => {
 		console.log('message: ' + msg);
