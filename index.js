@@ -25,8 +25,25 @@ app.get('/',(req,res) => {
 });
 io.on('connection',(socket) =>{
 	console.log('a user connected... ');
-      let path = 'public/output'
+      let path = 'public/output';
+
+      let d_test = 'public/test.txt';
+
+      // delete test
+      if (fs.existsSync(d_test)) {
+      	    fs.unlink(d_test,function(err){
+            if(err) return console.log(err);
+            console.log('file deleted successfully');
+        });
+      }
+      else {
+      	console.log('file to be removed does not exist');
+      }
+   
+
+      // check for a directory
       if (!fs.existsSync(path)) {
+      	// if it doesn't exist, create it.
          fs.mkdir(path, function(err) {
             if (err) {
              console.log('ERROR: ' + err)
