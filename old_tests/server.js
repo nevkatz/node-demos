@@ -10,7 +10,6 @@ var req = "";
 http.createServer(function(req, res) {
     if (req.method == 'GET') {
     	console.log('get!');
-
     } else if (req.method == 'POST') {
         var body = '';
         req.on('data', function(data) {
