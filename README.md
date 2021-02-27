@@ -36,7 +36,7 @@ The main test should dynamically create an output directory in the public direct
 
 * To run the tests, go to the main repo directory and then go into the "tests" directory. 
 
-* Type "node <file>." 
+* Type "node {filename.js}" 
 
 * Then, open a web browser and go to http://127.0.0.1:3000 or http://localhost:3000 
 
