@@ -5,14 +5,13 @@ const fs = require('fs');
 const express = require('express');
 //const xm = require("xmimetype");
 
-
 // this seems to make the difference.
 app.use(express.static('public'));
 
 app.get('/',(req,res) => {
 	// added for mime
 //  res.set('Content-Type', 'text/html');
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(__dirname + '/public/chat.html');
 });
 io.on('connection',(socket) =>{
 	console.log('a user connected... ');

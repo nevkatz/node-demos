@@ -10,7 +10,7 @@ app.get('/',(req,res) => {
 
   res.sendFile(__dirname + '/public/test-4-server-client.html');
 });
-io.on('connection',(socket) =>{
+io.on('connection',(socket) => {
 	console.log('a user connected... ');
       // create output directory if it does not exist.
       

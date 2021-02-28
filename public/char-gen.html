@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Character Generator</title>
+    <link rel="stylesheet" href="css/char-gen.css"/>
+  </head>
+  <body>
+
+    <form id="char-form">
+    <div id="filename-container">
+      <label>Filename</label>
+      <input type="text" id="filename"/>
+    </div>
+    <!-- attributes -->
+    <div id="name-container">
+      <label>Character Name</label>
+     <input type="text" id="char-name"/>
+    </div>
+
+    <div id="age-container">
+      <label>Character Age</label>
+     <input type="number" value="20" id="char-age"/>
+    </div>
+
+    <div id="personality-label">
+      <label>Personality</label>
+    </div>
+    <div id="personality">
+     <textarea id="char-personality"></textarea>
+    </div>
+
+
+    <!-- end attributes -->
+     <button id="save">Save Character</button>
+    </form>
+    <div id="files">
+      <h2>Files</h2>
+      <ul id="file-list"></ul>
+    </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="js/char-gen-client.js"></script>
+  </body>
+</html>
